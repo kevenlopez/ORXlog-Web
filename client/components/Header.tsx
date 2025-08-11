@@ -1,22 +1,70 @@
 import { ChevronDown } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { useState, useEffect } from 'react';
 
 export default function Header() {
+  const { t, i18n } = useTranslation();
+  const [scrolled, setScrolled] = useState(false);
+  const [showLanguageMenu, setShowLanguageMenu] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+    setShowLanguageMenu(false);
+  };
+
   return (
     <header className="absolute top-0 left-0 w-full z-50">
-      {/* Top bar */}
-      <div className="bg-orx-primary h-14 flex items-center justify-end px-6 lg:px-23">
+      {/* Top bar - hides on scroll */}
+      <div className={`bg-orx-primary h-14 flex items-center justify-end px-6 lg:px-23 transition-transform duration-300 ${
+        scrolled ? '-translate-y-full' : 'translate-y-0'
+      }`}>
         <div className="flex items-center gap-8">
-          <button className="flex items-center gap-2 px-3 py-2 rounded-full bg-white/20">
-            <span className="text-white text-sm">Español</span>
-            <ChevronDown className="w-4 h-4 text-white" />
-          </button>
-          <span className="text-white text-sm">Únete como partner</span>
-          <span className="text-white text-sm">Ingresa</span>
+          <div className="relative">
+            <button 
+              className="flex items-center gap-2 px-3 py-2 rounded-full bg-white/20"
+              onClick={() => setShowLanguageMenu(!showLanguageMenu)}
+            >
+              <span className="text-white text-sm">
+                {i18n.language === 'es' ? t('language.spanish') : t('language.english')}
+              </span>
+              <ChevronDown className="w-4 h-4 text-white" />
+            </button>
+            
+            {showLanguageMenu && (
+              <div className="absolute top-full mt-2 bg-white rounded-lg shadow-lg py-2 min-w-[120px]">
+                <button
+                  className="w-full px-4 py-2 text-left hover:bg-gray-100 text-sm"
+                  onClick={() => changeLanguage('es')}
+                >
+                  Español
+                </button>
+                <button
+                  className="w-full px-4 py-2 text-left hover:bg-gray-100 text-sm"
+                  onClick={() => changeLanguage('en')}
+                >
+                  English
+                </button>
+              </div>
+            )}
+          </div>
+          <span className="text-white text-sm">{t('header.partner')}</span>
+          <span className="text-white text-sm">{t('header.login')}</span>
         </div>
       </div>
 
-      {/* Main navigation */}
-      <div className="absolute top-[88px] left-1/2 transform -translate-x-1/2 max-w-[1180px] w-full mx-4 h-16 rounded-full bg-orx-primary flex items-center justify-between px-8">
+      {/* Main navigation - stays fixed on scroll */}
+      <div className={`absolute left-1/2 transform -translate-x-1/2 max-w-[1180px] w-full mx-4 h-16 rounded-full bg-orx-primary flex items-center justify-between px-8 transition-all duration-300 ${
+        scrolled ? 'top-4 fixed' : 'top-[88px]'
+      }`}>
         <div className="flex items-center">
           <svg width="128" height="36" viewBox="0 0 128 36" fill="none">
             <circle cx="17.9831" cy="18.2165" r="6.53923" fill="#1EA9EA"/>
@@ -31,14 +79,14 @@ export default function Header() {
         </div>
 
         <nav className="hidden lg:flex items-center gap-8">
-          <a href="#" className="text-white text-sm">Inicio</a>
-          <a href="#" className="text-white text-sm">Solución</a>
-          <a href="#" className="text-white text-sm">Arquitectura</a>
-          <a href="#" className="text-white text-sm">FAQ</a>
+          <a href="#" className="text-white text-sm">{t('header.home')}</a>
+          <a href="#" className="text-white text-sm">{t('header.solution')}</a>
+          <a href="#" className="text-white text-sm">{t('header.architecture')}</a>
+          <a href="#" className="text-white text-sm">{t('header.faq')}</a>
         </nav>
 
         <button className="bg-white text-orx-primary px-5 py-3 rounded-full text-sm font-medium whitespace-nowrap">
-          Solicita una demo
+          {t('header.demo')}
         </button>
       </div>
     </header>

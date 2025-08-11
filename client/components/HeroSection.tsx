@@ -1,6 +1,9 @@
 import { ChevronRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function HeroSection() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative pt-40 pb-16 px-6 min-h-[800px] flex items-center">
       {/* Background hero image */}
@@ -15,18 +18,15 @@ export default function HeroSection() {
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-          <span className="text-orx-primary">Log </span>
-          <span className="text-orx-sky">Intelligence</span>
-          <span className="text-orx-primary"> para<br className="hidden sm:inline" /> decisiones seguras y eficientes</span>
+          {t('hero.title')}
         </h1>
 
         <p className="text-lg md:text-xl text-orx-primary max-w-2xl mx-auto mb-8 leading-relaxed">
-          ORXlog transforma el caos de los datos en inteligencia accionable para equipos de ciberseguridad.
-          Optimiza, correlaciona y entrega visibilidad profunda desde un solo punto.
+          {t('hero.subtitle')}
         </p>
 
         <button className="bg-orx-blue text-white px-6 py-3 rounded-full font-medium inline-flex items-center gap-2 hover:bg-orx-blue/90 transition-colors">
-          Solicita una demo
+          {t('hero.cta')}
           <ChevronRight className="w-4 h-4" />
         </button>
       </div>

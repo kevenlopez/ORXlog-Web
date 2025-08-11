@@ -1,20 +1,12 @@
 import { ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { useScrollDirection } from '../hooks/useScrollDirection';
 
 export default function Header() {
   const { t, i18n } = useTranslation();
-  const [scrolled, setScrolled] = useState(false);
+  const { scrollDirection, isScrolled } = useScrollDirection();
   const [showLanguageMenu, setShowLanguageMenu] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 100);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -23,9 +15,9 @@ export default function Header() {
 
   return (
     <header className="absolute top-0 left-0 w-full z-50">
-      {/* Top bar - hides on scroll */}
+      {/* Top bar - hides on scroll down */}
       <div className={`bg-orx-primary h-14 flex items-center justify-end px-6 lg:px-23 transition-transform duration-300 ${
-        scrolled ? '-translate-y-full' : 'translate-y-0'
+        scrollDirection === 'down' && isScrolled ? '-translate-y-full' : 'translate-y-0'
       }`}>
         <div className="flex items-center gap-8">
           <div className="relative">
@@ -63,7 +55,7 @@ export default function Header() {
 
       {/* Main navigation - stays fixed on scroll */}
       <div className={`absolute left-1/2 transform -translate-x-1/2 max-w-[1180px] w-full mx-4 h-16 rounded-full bg-orx-primary flex items-center justify-between px-8 transition-all duration-300 ${
-        scrolled ? 'top-4 fixed' : 'top-[88px]'
+        isScrolled ? 'top-4 fixed shadow-lg' : 'top-[88px]'
       }`}>
         <div className="flex items-center">
           <svg width="128" height="36" viewBox="0 0 128 36" fill="none">

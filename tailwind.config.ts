@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Sofia Sans', 'system-ui', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -56,6 +59,14 @@ export default {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+        },
+        orx: {
+          primary: "#1E1B31",
+          blue: "#598CDC",
+          sky: "#1EA9EA",
+          bg1: "#EFF4FC",
+          bg2: "#F6F3FF",
+          main: "#EEE",
         },
       },
       borderRadius: {

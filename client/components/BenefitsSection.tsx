@@ -34,14 +34,14 @@ export default function BenefitsSection() {
             </button>
           </div>
 
-          <div className="flex gap-8 items-start">
+          <div className="flex flex-col lg:flex-row gap-8 items-start">
             {/* Left Content */}
-            <div className="flex-1 pr-6">
+            <div className="flex-1 lg:pr-6">
               <h2 className="text-2xl lg:text-3xl font-bold mb-6">
                 <span className="text-orx-primary">Reduce hasta un 70% en </span>
                 <span className="text-orx-blue">almacenamiento y licencias SIEM.</span>
               </h2>
-              
+
               <div className="space-y-4 mb-8">
                 <div className="flex gap-4">
                   <div className="w-6 h-6 rounded-full bg-orx-blue flex items-center justify-center mt-1 flex-shrink-0">
@@ -51,7 +51,7 @@ export default function BenefitsSection() {
                     <span className="font-bold">Acelera investigaciones</span> con correlación de eventos y alertas contextuales basadas en Mitre Att&ck.
                   </p>
                 </div>
-                
+
                 <div className="flex gap-4">
                   <div className="w-6 h-6 rounded-full bg-orx-blue flex items-center justify-center mt-1 flex-shrink-0">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
@@ -60,7 +60,7 @@ export default function BenefitsSection() {
                     <span className="font-bold">Integra rápidamente</span> con las principales soluciones del mercado.
                   </p>
                 </div>
-                
+
                 <div className="flex gap-4">
                   <div className="w-6 h-6 rounded-full bg-orx-blue flex items-center justify-center mt-1 flex-shrink-0">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
@@ -70,32 +70,32 @@ export default function BenefitsSection() {
                   </p>
                 </div>
               </div>
-              
+
               <button className="bg-orx-blue text-white px-6 py-3 rounded-full font-medium hover:bg-orx-blue/90 transition-colors">
                 Solicita una demo
               </button>
             </div>
 
             {/* Right Cards */}
-            <div className="flex-shrink-0 w-[472px]">
+            <div className="flex-shrink-0 w-full lg:w-[472px]">
               <div className="grid grid-cols-2 gap-5">
                 <div className="bg-orx-bg2 rounded-3xl p-4">
-                  <div className="text-5xl font-normal text-orx-primary mb-2">+1 MM</div>
+                  <div className="text-3xl lg:text-5xl font-normal text-orx-primary mb-2">+1 MM</div>
                   <p className="text-orx-primary text-sm leading-tight">De eventos procesados por día</p>
                 </div>
-                
+
                 <div className="bg-orx-bg2 rounded-3xl p-4">
-                  <div className="text-5xl font-normal text-orx-primary mb-2">-60%</div>
+                  <div className="text-3xl lg:text-5xl font-normal text-orx-primary mb-2">-60%</div>
                   <p className="text-orx-primary text-sm leading-tight">En volumen de logs promedio por cliente</p>
                 </div>
-                
+
                 <div className="bg-orx-bg2 rounded-3xl p-4">
-                  <div className="text-5xl font-normal text-orx-primary mb-2">+90%</div>
+                  <div className="text-3xl lg:text-5xl font-normal text-orx-primary mb-2">+90%</div>
                   <p className="text-orx-primary text-sm leading-tight">De detecciones con enriquecimiento automatizado.</p>
                 </div>
-                
+
                 <div className="bg-orx-bg2 rounded-3xl p-4">
-                  <div className="text-5xl font-normal text-orx-primary mb-2">12 min</div>
+                  <div className="text-3xl lg:text-5xl font-normal text-orx-primary mb-2">12 min</div>
                   <p className="text-orx-primary text-sm leading-tight">De media para un análisis completo post incidente</p>
                 </div>
               </div>

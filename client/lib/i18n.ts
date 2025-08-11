@@ -18,7 +18,7 @@ const resources = {
       
       // Hero
       "hero.title": "Log Intelligence para decisiones seguras y eficientes",
-      "hero.subtitle": "Transforma tus datos de seguridad en inteligencia accionable con nuestra plataforma de next-gen SIEM",
+      "hero.subtitle": "ORXlog transforma el caos de los datos en inteligencia accionable para equipos de ciberseguridad. Optimiza, correlaciona y entrega visibilidad profunda desde un solo punto.",
       "hero.cta": "Solicita una demo",
       
       // Benefits Section
@@ -115,7 +115,7 @@ const resources = {
       
       // Hero
       "hero.title": "Log Intelligence for secure and efficient decisions",
-      "hero.subtitle": "Transform your security data into actionable intelligence with our next-gen SIEM platform",
+      "hero.subtitle": "ORXlog transforms data chaos into actionable intelligence for cybersecurity teams. Optimize, correlate and deliver deep visibility from a single point.",
       "hero.cta": "Request a demo",
       
       // Benefits Section

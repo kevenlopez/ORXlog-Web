@@ -14,9 +14,9 @@ export default function Header() {
           <span className="text-white text-sm">Ingresa</span>
         </div>
       </div>
-      
+
       {/* Main navigation */}
-      <div className="absolute top-[88px] left-1/2 transform -translate-x-1/2 w-[1180px] h-16 rounded-full bg-orx-primary flex items-center justify-between px-8">
+      <div className="absolute top-[88px] left-1/2 transform -translate-x-1/2 max-w-[1180px] w-full mx-4 h-16 rounded-full bg-orx-primary flex items-center justify-between px-8">
         <div className="flex items-center">
           <svg width="128" height="36" viewBox="0 0 128 36" fill="none">
             <circle cx="17.9831" cy="18.2165" r="6.53923" fill="#1EA9EA"/>
@@ -29,15 +29,15 @@ export default function Header() {
             <path d="M110.261 20.3183C110.261 25.2196 106.288 29.193 101.386 29.193C96.485 29.193 92.5117 25.2196 92.5117 20.3183C92.5117 15.4169 96.485 11.4436 101.386 11.4436C106.288 11.4436 110.261 15.4169 110.261 20.3183ZM96.2391 20.3183C96.2391 23.1611 98.5436 25.4656 101.386 25.4656C104.229 25.4656 106.534 23.1611 106.534 20.3183C106.534 17.4755 104.229 15.171 101.386 15.171C98.5436 15.171 96.2391 17.4755 96.2391 20.3183Z" fill="white"/>
           </svg>
         </div>
-        
-        <nav className="flex items-center gap-8">
+
+        <nav className="hidden lg:flex items-center gap-8">
           <a href="#" className="text-white text-sm">Inicio</a>
           <a href="#" className="text-white text-sm">Solución</a>
           <a href="#" className="text-white text-sm">Arquitectura</a>
           <a href="#" className="text-white text-sm">FAQ</a>
         </nav>
-        
-        <button className="bg-white text-orx-primary px-5 py-3 rounded-full text-sm font-medium">
+
+        <button className="bg-white text-orx-primary px-5 py-3 rounded-full text-sm font-medium whitespace-nowrap">
           Solicita una demo
         </button>
       </div>

@@ -1,6 +1,9 @@
 import { Mail, MapPin } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-orx-primary rounded-t-[64px] px-12 py-10">
       <div className="max-w-[1180px] mx-auto flex flex-col items-center gap-6">
@@ -16,34 +19,36 @@ export default function Footer() {
           <path d="M110.261 20.3183C110.261 25.2196 106.288 29.193 101.386 29.193C96.485 29.193 92.5117 25.2196 92.5117 20.3183C92.5117 15.4169 96.485 11.4436 101.386 11.4436C106.288 11.4436 110.261 15.4169 110.261 20.3183ZM96.2391 20.3183C96.2391 23.1611 98.5436 25.4656 101.386 25.4656C104.229 25.4656 106.534 23.1611 106.534 20.3183C106.534 17.4755 104.229 15.171 101.386 15.171C98.5436 15.171 96.2391 17.4755 96.2391 20.3183Z" fill="white"/>
         </svg>
 
+        <p className="text-white text-center max-w-md">{t('footer.description')}</p>
+
         {/* Contact info */}
-        <div className="flex items-center gap-8">
+        <div className="flex flex-col sm:flex-row items-center gap-6">
           <div className="flex items-center gap-2">
-            <Mail className="w-6 h-6 text-white" />
-            <span className="text-white text-sm">info@orxlog.com</span>
+            <Mail className="w-5 h-5 text-white" />
+            <span className="text-white text-sm">{t('footer.email')}</span>
           </div>
           <div className="flex items-center gap-2">
-            <MapPin className="w-6 h-6 text-white" />
-            <span className="text-white text-sm">Miami, USA</span>
+            <MapPin className="w-5 h-5 text-white" />
+            <span className="text-white text-sm">{t('footer.location')}</span>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="w-full h-px bg-white/50"></div>
+        <div className="w-full h-px bg-white/20"></div>
 
         {/* Links */}
-        <div className="flex items-center gap-8">
-          <a href="#" className="text-white text-sm text-center">Política de privacidad</a>
-          <a href="#" className="text-white text-sm text-center">Términos de uso</a>
-          <a href="#" className="text-white text-sm text-center">Política de Cookies</a>
+        <div className="flex flex-col sm:flex-row items-center gap-6">
+          <a href="#" className="text-white text-sm hover:text-orx-sky transition-colors">
+            {t('footer.legal')}
+          </a>
+          <a href="#" className="text-white text-sm hover:text-orx-sky transition-colors">
+            {t('footer.privacy')}
+          </a>
         </div>
 
-        {/* Divider */}
-        <div className="w-full h-px bg-white/50"></div>
-
         {/* Copyright */}
-        <p className="text-white text-sm text-center">
-          © 2025 ORXLog. Todos los derechos reservados.
+        <p className="text-white/70 text-sm text-center">
+          {t('footer.rights')}
         </p>
       </div>
     </footer>

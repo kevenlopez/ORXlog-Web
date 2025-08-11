@@ -11,38 +11,38 @@ export default function DataFlowSection() {
             <div className="text-left">
               <p className="text-orx-primary text-sm mb-8">Data source</p>
               <div className="relative">
-                <span className="text-6xl font-normal text-orx-primary">26.12</span>
-                <span className="text-2xl text-orx-blue absolute bottom-2 ml-2">GB</span>
+                <span className="text-4xl lg:text-6xl font-normal text-orx-primary">26.12</span>
+                <span className="text-xl lg:text-2xl text-orx-blue absolute bottom-2 ml-2">GB</span>
               </div>
             </div>
           </div>
-          
+
           <div className="bg-white rounded-3xl border border-gray-200 p-6">
             <div className="text-left">
               <p className="text-orx-primary text-sm mb-8">Label filtration</p>
               <div className="relative">
-                <span className="text-6xl font-normal text-orx-primary">18.29</span>
-                <span className="text-2xl text-orx-blue absolute bottom-2 ml-2">GB</span>
+                <span className="text-4xl lg:text-6xl font-normal text-orx-primary">18.29</span>
+                <span className="text-xl lg:text-2xl text-orx-blue absolute bottom-2 ml-2">GB</span>
               </div>
             </div>
           </div>
-          
+
           <div className="bg-white rounded-3xl border border-gray-200 p-6">
             <div className="text-left">
               <p className="text-orx-primary text-sm mb-8">Pipeline</p>
               <div className="relative">
-                <span className="text-6xl font-normal text-orx-primary">13.06</span>
-                <span className="text-2xl text-orx-blue absolute bottom-2 ml-2">GB</span>
+                <span className="text-4xl lg:text-6xl font-normal text-orx-primary">13.06</span>
+                <span className="text-xl lg:text-2xl text-orx-blue absolute bottom-2 ml-2">GB</span>
               </div>
             </div>
           </div>
-          
+
           <div className="bg-white rounded-3xl border border-gray-200 p-6">
             <div className="text-left">
               <p className="text-orx-primary text-sm mb-8">Destination</p>
               <div className="relative">
-                <span className="text-6xl font-normal text-orx-primary">7.84</span>
-                <span className="text-2xl text-orx-blue absolute bottom-2 ml-2">GB</span>
+                <span className="text-4xl lg:text-6xl font-normal text-orx-primary">7.84</span>
+                <span className="text-xl lg:text-2xl text-orx-blue absolute bottom-2 ml-2">GB</span>
               </div>
             </div>
           </div>

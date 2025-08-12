@@ -8,6 +8,21 @@ export default function BenefitsSection() {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<TabType>('benefits');
 
+  const tabs: TabType[] = ['benefits', 'how', 'architecture', 'usecases'];
+  const currentIndex = tabs.indexOf(activeTab);
+
+  const goToPreviousTab = () => {
+    if (currentIndex > 0) {
+      setActiveTab(tabs[currentIndex - 1]);
+    }
+  };
+
+  const goToNextTab = () => {
+    if (currentIndex < tabs.length - 1) {
+      setActiveTab(tabs[currentIndex + 1]);
+    }
+  };
+
   const renderBenefitsContent = () => (
     <div className="flex flex-col lg:flex-row gap-8 items-start">
       {/* Left Content */}

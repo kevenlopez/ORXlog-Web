@@ -17,7 +17,32 @@ interface TabContent {
 
 const Solution: React.FC = () => {
   const [activeTab, setActiveTab] = useState<TabType>('optimization');
+  const [currentImage, setCurrentImage] = useState(0);
   const navigate = useNavigate();
+
+  const images = [
+    {
+      src: "https://api.builder.io/api/v1/image/assets/TEMP/f299b185e3adb9ce86cf9b72c8105c36db841c58?width=2000",
+      alt: "ORXlog Dashboard - Overview"
+    },
+    {
+      src: "https://api.builder.io/api/v1/image/assets/TEMP/a8c4d77bc7193ffb11e0b001416001c7db7d0849?width=2000",
+      alt: "ORXlog Dashboard - Analytics"
+    },
+    {
+      src: "https://api.builder.io/api/v1/image/assets/TEMP/b747e66ea6c74ae68d51982c15d1a1e50f8cb0b8?width=2000",
+      alt: "ORXlog Dashboard - Security"
+    }
+  ];
+
+  // Auto-advance carousel every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   const tabsContent: Record<TabType, TabContent> = {
     optimization: {

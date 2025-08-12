@@ -1,6 +1,6 @@
-import { ChevronRight } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 export default function HeroSection() {
   const { t } = useTranslation();
@@ -20,21 +20,21 @@ export default function HeroSection() {
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-          {t('hero.title')}
+          {t("hero.title")}
         </h1>
 
         <p className="text-lg md:text-xl text-orx-primary max-w-2xl mx-auto mb-8 leading-relaxed">
-          {t('hero.subtitle')}
+          {t("hero.subtitle")}
         </p>
 
         <button
           onClick={() => {
-            navigate('/contacto');
+            navigate("/contacto");
             window.scrollTo(0, 0);
           }}
           className="bg-orx-blue text-white px-6 py-3 rounded-full font-medium inline-flex items-center gap-2 hover:bg-orx-blue/90 transition-colors"
         >
-          {t('hero.cta')}
+          {t("hero.cta")}
           <ChevronRight className="w-4 h-4" />
         </button>
       </div>

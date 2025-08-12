@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -51,12 +51,12 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     /* ORXlog specific colors */
-    --orx-primary-1: 235 17% 17%;  /* #1E1B31 */
-    --orx-primary-2: 210 45% 69%;  /* #598CDC */
-    --orx-sky: 198 77% 52%;        /* #1EA9EA */
-    --orx-bg-1: 214 50% 97%;       /* #EFF4FC */
-    --orx-bg-2: 255 30% 98%;       /* #F6F3FF */
-    --orx-bg-main: 240 17% 93%;    /* #EEE */
+    --orx-primary-1: 235 17% 17%; /* #1E1B31 */
+    --orx-primary-2: 210 45% 69%; /* #598CDC */
+    --orx-sky: 198 77% 52%; /* #1EA9EA */
+    --orx-bg-1: 214 50% 97%; /* #EFF4FC */
+    --orx-bg-2: 255 30% 98%; /* #F6F3FF */
+    --orx-bg-main: 240 17% 93%; /* #EEE */
   }
 
   .dark {

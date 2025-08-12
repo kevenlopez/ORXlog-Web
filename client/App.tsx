@@ -8,7 +8,7 @@ import FAQ from "@/pages/FAQ";
 import Solution from "@/pages/Solution";
 import Architecture from "@/pages/Architecture";
 import NotFound from "@/pages/NotFound";
-import './lib/i18n';
+import "./lib/i18n";
 
 const queryClient = new QueryClient({
   defaultOptions: {

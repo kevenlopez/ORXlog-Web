@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Sofia Sans', 'system-ui', 'sans-serif'],
+        sans: ["Sofia Sans", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

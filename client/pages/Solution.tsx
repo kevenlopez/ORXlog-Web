@@ -101,6 +101,18 @@ const Solution: React.FC = () => {
     }
   };
 
+  const goToImage = (index: number) => {
+    setCurrentImage(index);
+  };
+
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
+  };
+
   const handleDemoClick = () => {
     navigate('/contacto');
     window.scrollTo(0, 0);

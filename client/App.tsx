@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import Index from "@/pages/Index";
 import Contact from "@/pages/Contact";
 import Partner from "@/pages/Partner";
+import FAQ from "@/pages/FAQ";
 import NotFound from "@/pages/NotFound";
 import './lib/i18n';
 

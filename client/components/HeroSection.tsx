@@ -1,8 +1,10 @@
 import { ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 export default function HeroSection() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <section className="relative pt-40 pb-16 px-6 min-h-[800px] flex items-center">
@@ -25,7 +27,10 @@ export default function HeroSection() {
           {t('hero.subtitle')}
         </p>
 
-        <button className="bg-orx-blue text-white px-6 py-3 rounded-full font-medium inline-flex items-center gap-2 hover:bg-orx-blue/90 transition-colors">
+        <button
+          onClick={() => navigate('/contacto')}
+          className="bg-orx-blue text-white px-6 py-3 rounded-full font-medium inline-flex items-center gap-2 hover:bg-orx-blue/90 transition-colors"
+        >
           {t('hero.cta')}
           <ChevronRight className="w-4 h-4" />
         </button>

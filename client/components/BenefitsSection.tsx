@@ -66,7 +66,10 @@ export default function BenefitsSection() {
           </div>
         </div>
 
-        <button className="bg-orx-blue text-white px-6 py-3 rounded-full font-medium hover:bg-orx-blue/90 transition-colors">
+        <button
+          onClick={() => navigate('/contacto')}
+          className="bg-orx-blue text-white px-6 py-3 rounded-full font-medium hover:bg-orx-blue/90 transition-colors"
+        >
           {t('header.demo')}
         </button>
       </div>

@@ -136,6 +136,7 @@ const FAQ: React.FC = () => {
 
   const handleDemoClick = () => {
     navigate('/contacto');
+    window.scrollTo(0, 0);
   };
 
   return (

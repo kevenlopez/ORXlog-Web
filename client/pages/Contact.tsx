@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { Mail } from 'lucide-react';
+import { Mail, ChevronDown } from 'lucide-react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default function Contact() {
   const { t } = useTranslation();
@@ -107,6 +109,8 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-gray-100">
+      <Header />
+
       {/* Header spacer */}
       <div className="h-32"></div>
       
@@ -336,6 +340,8 @@ export default function Contact() {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

@@ -78,10 +78,12 @@ const Solution: React.FC = () => {
 
   const handleDemoClick = () => {
     navigate('/contacto');
+    window.scrollTo(0, 0);
   };
 
   const handleExpertClick = () => {
     navigate('/contacto');
+    window.scrollTo(0, 0);
   };
 
   return (

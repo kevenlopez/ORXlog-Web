@@ -150,7 +150,7 @@ export default function Contact() {
     'Salud y Ciencias de la Vida',
     'Gobierno y Sector Público',
     'Retail y E-commerce',
-    'Energía y Utilities',
+    'Energ��a y Utilities',
     'Manufactura e Industrial',
     'Tecnología y Telecomunicaciones',
     'Educación',
@@ -422,9 +422,9 @@ export default function Contact() {
 
                       {showCountryDropdown && (
                         <div className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 w-[280px] max-h-60 overflow-y-auto">
-                          {countries.map((country) => (
+                          {countries.map((country, index) => (
                             <button
-                              key={country.code}
+                              key={`${country.code}-${country.name}-${index}`}
                               type="button"
                               onClick={() => {
                                 handleInputChange('countryCode', country.code);

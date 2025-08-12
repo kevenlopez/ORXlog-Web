@@ -335,41 +335,87 @@ export default function Contact() {
 
               {/* Fourth Row */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
+                <div className="relative">
                   <label className="block text-orx-primary text-sm font-medium mb-2">
                     Volumen de datos
                   </label>
-                  <select
-                    value={formData.dataVolume}
-                    onChange={(e) => handleInputChange('dataVolume', e.target.value)}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orx-blue focus:border-orx-blue ${
-                      errors.dataVolume ? 'border-red-500' : 'border-gray-300'
-                    }`}
-                  >
-                    <option value="">Selecciona una opción</option>
-                    {dataVolumes.map((volume) => (
-                      <option key={volume} value={volume}>{volume}</option>
-                    ))}
-                  </select>
+                  <div className="relative">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        closeAllDropdowns();
+                        setShowVolumeDropdown(!showVolumeDropdown);
+                      }}
+                      className={`w-full px-4 py-3 border rounded-lg bg-white text-left flex items-center justify-between focus:ring-2 focus:ring-orx-blue focus:border-orx-blue transition-colors ${
+                        errors.dataVolume ? 'border-red-500' : 'border-gray-300'
+                      } ${showVolumeDropdown ? 'border-orx-blue ring-2 ring-orx-blue' : ''}`}
+                    >
+                      <span className={formData.dataVolume ? 'text-orx-primary' : 'text-gray-500'}>
+                        {formData.dataVolume || 'Selecciona una opción'}
+                      </span>
+                      <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${showVolumeDropdown ? 'rotate-180' : ''}`} />
+                    </button>
+
+                    {showVolumeDropdown && (
+                      <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto">
+                        {dataVolumes.map((volume) => (
+                          <button
+                            key={volume}
+                            type="button"
+                            onClick={() => {
+                              handleInputChange('dataVolume', volume);
+                              setShowVolumeDropdown(false);
+                            }}
+                            className="w-full px-4 py-3 text-left hover:bg-orx-bg1 text-orx-primary transition-colors first:rounded-t-lg last:rounded-b-lg"
+                          >
+                            {volume}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                   {errors.dataVolume && <p className="text-red-500 text-xs mt-1">{errors.dataVolume}</p>}
                 </div>
                 
-                <div>
+                <div className="relative">
                   <label className="block text-orx-primary text-sm font-medium mb-2">
                     Número de fuentes de datos
                   </label>
-                  <select
-                    value={formData.dataSources}
-                    onChange={(e) => handleInputChange('dataSources', e.target.value)}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orx-blue focus:border-orx-blue ${
-                      errors.dataSources ? 'border-red-500' : 'border-gray-300'
-                    }`}
-                  >
-                    <option value="">Selecciona una opción</option>
-                    {dataSourcesOptions.map((option) => (
-                      <option key={option} value={option}>{option}</option>
-                    ))}
-                  </select>
+                  <div className="relative">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        closeAllDropdowns();
+                        setShowSourcesDropdown(!showSourcesDropdown);
+                      }}
+                      className={`w-full px-4 py-3 border rounded-lg bg-white text-left flex items-center justify-between focus:ring-2 focus:ring-orx-blue focus:border-orx-blue transition-colors ${
+                        errors.dataSources ? 'border-red-500' : 'border-gray-300'
+                      } ${showSourcesDropdown ? 'border-orx-blue ring-2 ring-orx-blue' : ''}`}
+                    >
+                      <span className={formData.dataSources ? 'text-orx-primary' : 'text-gray-500'}>
+                        {formData.dataSources || 'Selecciona una opción'}
+                      </span>
+                      <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${showSourcesDropdown ? 'rotate-180' : ''}`} />
+                    </button>
+
+                    {showSourcesDropdown && (
+                      <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto">
+                        {dataSourcesOptions.map((option) => (
+                          <button
+                            key={option}
+                            type="button"
+                            onClick={() => {
+                              handleInputChange('dataSources', option);
+                              setShowSourcesDropdown(false);
+                            }}
+                            className="w-full px-4 py-3 text-left hover:bg-orx-bg1 text-orx-primary transition-colors first:rounded-t-lg last:rounded-b-lg"
+                          >
+                            {option}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                   {errors.dataSources && <p className="text-red-500 text-xs mt-1">{errors.dataSources}</p>}
                 </div>
               </div>

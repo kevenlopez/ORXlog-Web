@@ -242,7 +242,10 @@ export default function BenefitsSection() {
         </div>
 
         <div className="flex gap-6">
-          <button className="bg-orx-blue text-white px-6 py-3 rounded-full font-medium hover:bg-orx-blue/90 transition-colors">
+          <button
+            onClick={() => navigate('/contacto')}
+            className="bg-orx-blue text-white px-6 py-3 rounded-full font-medium hover:bg-orx-blue/90 transition-colors"
+          >
             {t('header.demo')}
           </button>
           <button className="border border-gray-300 text-orx-primary px-6 py-3 rounded-full font-medium hover:bg-gray-50 transition-colors flex items-center gap-2">

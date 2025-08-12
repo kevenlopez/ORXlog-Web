@@ -7,6 +7,7 @@ type TabType = 'benefits' | 'how' | 'architecture' | 'usecases';
 
 export default function BenefitsSection() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<TabType>('benefits');
 
   const tabs: TabType[] = ['benefits', 'how', 'architecture', 'usecases'];

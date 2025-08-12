@@ -55,7 +55,10 @@ export default function DataFlowSection() {
         </div>
         
         <button
-          onClick={() => navigate('/contacto')}
+          onClick={() => {
+            navigate('/contacto');
+            window.scrollTo(0, 0);
+          }}
           className="bg-orx-blue text-white px-6 py-3 rounded-full font-medium hover:bg-orx-blue/90 transition-colors"
         >
           {t('header.demo')}

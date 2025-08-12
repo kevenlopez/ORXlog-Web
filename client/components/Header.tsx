@@ -92,7 +92,12 @@ export default function Header() {
           >
             {t('header.home')}
           </button>
-          <a href="#" className="text-white text-sm hover:text-orx-sky transition-colors">{t('header.solution')}</a>
+          <button
+            onClick={() => navigate('/solucion')}
+            className="text-white text-sm hover:text-orx-sky transition-colors"
+          >
+            {t('header.solution')}
+          </button>
           <a href="#" className="text-white text-sm hover:text-orx-sky transition-colors">{t('header.architecture')}</a>
           <button
             onClick={() => navigate('/faq')}

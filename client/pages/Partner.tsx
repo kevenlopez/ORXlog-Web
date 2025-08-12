@@ -33,7 +33,7 @@ export default function Partner() {
   const countries = [
     { code: '+593', flag: '🇪🇨', name: 'Ecuador' },
     { code: '+1', flag: '🇺🇸', name: 'Estados Unidos' },
-    { code: '+34', flag: '🇪🇸', name: 'España' },
+    { code: '+34', flag: '����🇸', name: 'España' },
     { code: '+52', flag: '🇲🇽', name: 'México' },
     { code: '+57', flag: '🇨🇴', name: 'Colombia' },
     { code: '+51', flag: '🇵🇪', name: 'Perú' },
@@ -374,7 +374,7 @@ export default function Partner() {
                       </button>
                       
                       {showCountryCodeDropdown && (
-                        <div className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 min-w-[200px] max-h-60 overflow-y-auto">
+                        <div className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 w-[280px] max-h-60 overflow-y-auto">
                           {countries.map((country) => (
                             <button
                               key={country.code}
@@ -386,8 +386,8 @@ export default function Partner() {
                               className="w-full px-3 py-2 text-left hover:bg-orx-bg1 transition-colors flex items-center gap-2 text-sm first:rounded-t-lg last:rounded-b-lg"
                             >
                               <span>{country.flag}</span>
-                              <span>{country.code}</span>
-                              <span className="text-gray-600">{country.name}</span>
+                              <span className="font-medium">{country.code}</span>
+                              <span className="text-gray-600 truncate">{country.name}</span>
                             </button>
                           ))}
                         </div>

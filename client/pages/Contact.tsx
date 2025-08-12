@@ -191,7 +191,7 @@ export default function Contact() {
                     placeholder="Ej. Elon"
                     value={formData.firstName}
                     onChange={(e) => handleInputChange('firstName', e.target.value)}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orx-blue focus:border-orx-blue ${
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orx-blue focus:border-orx-blue transition-colors ${
                       errors.firstName ? 'border-red-500' : 'border-gray-300'
                     }`}
                   />
@@ -207,7 +207,7 @@ export default function Contact() {
                     placeholder="Ej. Musk"
                     value={formData.lastName}
                     onChange={(e) => handleInputChange('lastName', e.target.value)}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orx-blue focus:border-orx-blue ${
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orx-blue focus:border-orx-blue transition-colors ${
                       errors.lastName ? 'border-red-500' : 'border-gray-300'
                     }`}
                   />
@@ -226,7 +226,7 @@ export default function Contact() {
                     placeholder="Ej. SpaceX"
                     value={formData.company}
                     onChange={(e) => handleInputChange('company', e.target.value)}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orx-blue focus:border-orx-blue ${
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orx-blue focus:border-orx-blue transition-colors ${
                       errors.company ? 'border-red-500' : 'border-gray-300'
                     }`}
                   />
@@ -287,7 +287,7 @@ export default function Contact() {
                     placeholder="Ej. nombre@miempresa.com"
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orx-blue focus:border-orx-blue ${
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orx-blue focus:border-orx-blue transition-colors ${
                       errors.email ? 'border-red-500' : 'border-gray-300'
                     }`}
                   />
@@ -445,7 +445,7 @@ export default function Contact() {
                   placeholder="Compártenos cualquier contexto adicional que nos ayude a personalizar tu demo..."
                   value={formData.message}
                   onChange={(e) => handleInputChange('message', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orx-blue focus:border-orx-blue resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orx-blue focus:border-orx-blue resize-none transition-colors"
                 ></textarea>
               </div>
 

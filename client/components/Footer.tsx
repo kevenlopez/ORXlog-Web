@@ -19,8 +19,6 @@ export default function Footer() {
           <path d="M110.261 20.3183C110.261 25.2196 106.288 29.193 101.386 29.193C96.485 29.193 92.5117 25.2196 92.5117 20.3183C92.5117 15.4169 96.485 11.4436 101.386 11.4436C106.288 11.4436 110.261 15.4169 110.261 20.3183ZM96.2391 20.3183C96.2391 23.1611 98.5436 25.4656 101.386 25.4656C104.229 25.4656 106.534 23.1611 106.534 20.3183C106.534 17.4755 104.229 15.171 101.386 15.171C98.5436 15.171 96.2391 17.4755 96.2391 20.3183Z" fill="white"/>
         </svg>
 
-        <p className="text-white text-center max-w-md">{t('footer.description')}</p>
-
         {/* Contact info */}
         <div className="flex flex-col sm:flex-row items-center gap-6">
           <div className="flex items-center gap-2">

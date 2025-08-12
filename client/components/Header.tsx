@@ -53,7 +53,12 @@ export default function Header() {
               </div>
             )}
           </div>
-          <span className="text-white text-sm">{t('header.partner')}</span>
+          <button
+            onClick={() => navigate('/partner')}
+            className="text-white text-sm hover:text-orx-sky transition-colors"
+          >
+            {t('header.partner')}
+          </button>
           <span className="text-white text-sm">{t('header.login')}</span>
         </div>
       </div>

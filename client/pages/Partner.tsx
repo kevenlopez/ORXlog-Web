@@ -366,7 +366,7 @@ export default function Partner() {
                           closeAllDropdowns();
                           setShowCountryCodeDropdown(!showCountryCodeDropdown);
                         }}
-                        className="px-3 py-3 border border-r-0 rounded-l-lg border-gray-300 bg-white text-sm flex items-center gap-2 hover:bg-gray-50 focus:ring-2 focus:ring-orx-blue focus:border-orx-blue transition-colors min-w-[120px]"
+                        className="px-2 py-3 border border-r-0 rounded-l-lg border-gray-300 bg-white text-sm flex items-center gap-1 hover:bg-gray-50 focus:ring-2 focus:ring-orx-blue focus:border-orx-blue transition-colors w-[100px] flex-shrink-0"
                       >
                         <span>{getSelectedCountry().flag}</span>
                         <span>{getSelectedCountry().code}</span>

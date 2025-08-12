@@ -9,12 +9,12 @@ export default function DashboardSection() {
       alt: "ORXlog Dashboard - Overview"
     },
     {
-      src: "https://api.builder.io/api/v1/image/assets/TEMP/8ec4b77cc7293cfb11e0b001416001c7db7d0849?width=2000",
+      src: "https://api.builder.io/api/v1/image/assets/TEMP/a8c4d77bc7193ffb11e0b001416001c7db7d0849?width=2000",
       alt: "ORXlog Dashboard - Analytics"
     },
     {
-      src: "https://api.builder.io/api/v1/image/assets/TEMP/6747e66ea6c74ae68d51982c15d1a1e50f8cb0b8?width=2000",
-      alt: "ORXlog Dashboard - Alerts"
+      src: "https://api.builder.io/api/v1/image/assets/TEMP/b747e66ea6c74ae68d51982c15d1a1e50f8cb0b8?width=2000",
+      alt: "ORXlog Dashboard - Security"
     }
   ];
 

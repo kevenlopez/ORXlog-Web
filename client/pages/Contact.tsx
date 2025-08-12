@@ -218,22 +218,45 @@ export default function Contact() {
                   {errors.company && <p className="text-red-500 text-xs mt-1">{errors.company}</p>}
                 </div>
                 
-                <div>
+                <div className="relative">
                   <label className="block text-orx-primary text-sm font-medium mb-2">
                     Industria / Sector
                   </label>
-                  <select
-                    value={formData.industry}
-                    onChange={(e) => handleInputChange('industry', e.target.value)}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orx-blue focus:border-orx-blue ${
-                      errors.industry ? 'border-red-500' : 'border-gray-300'
-                    }`}
-                  >
-                    <option value="">Selecciona una opción</option>
-                    {industries.map((industry) => (
-                      <option key={industry} value={industry}>{industry}</option>
-                    ))}
-                  </select>
+                  <div className="relative">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        closeAllDropdowns();
+                        setShowIndustryDropdown(!showIndustryDropdown);
+                      }}
+                      className={`w-full px-4 py-3 border rounded-lg bg-white text-left flex items-center justify-between focus:ring-2 focus:ring-orx-blue focus:border-orx-blue transition-colors ${
+                        errors.industry ? 'border-red-500' : 'border-gray-300'
+                      } ${showIndustryDropdown ? 'border-orx-blue ring-2 ring-orx-blue' : ''}`}
+                    >
+                      <span className={formData.industry ? 'text-orx-primary' : 'text-gray-500'}>
+                        {formData.industry || 'Selecciona una opción'}
+                      </span>
+                      <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${showIndustryDropdown ? 'rotate-180' : ''}`} />
+                    </button>
+
+                    {showIndustryDropdown && (
+                      <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto">
+                        {industries.map((industry) => (
+                          <button
+                            key={industry}
+                            type="button"
+                            onClick={() => {
+                              handleInputChange('industry', industry);
+                              setShowIndustryDropdown(false);
+                            }}
+                            className="w-full px-4 py-3 text-left hover:bg-orx-bg1 text-orx-primary transition-colors first:rounded-t-lg last:rounded-b-lg"
+                          >
+                            {industry}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                   {errors.industry && <p className="text-red-500 text-xs mt-1">{errors.industry}</p>}
                 </div>
               </div>
@@ -256,28 +279,52 @@ export default function Contact() {
                   {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
                 </div>
                 
-                <div>
+                <div className="relative">
                   <label className="block text-orx-primary text-sm font-medium mb-2">
                     Número celular
                   </label>
                   <div className="flex">
-                    <select
-                      value={formData.countryCode}
-                      onChange={(e) => handleInputChange('countryCode', e.target.value)}
-                      className="px-3 py-3 border border-r-0 rounded-l-lg border-gray-300 bg-gray-50 text-sm"
-                    >
-                      <option value="+51">🇵🇪 +51</option>
-                      <option value="+1">����🇸 +1</option>
-                      <option value="+34">🇪🇸 +34</option>
-                      <option value="+52">🇲🇽 +52</option>
-                      <option value="+57">🇨🇴 +57</option>
-                    </select>
+                    <div className="relative">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          closeAllDropdowns();
+                          setShowCountryDropdown(!showCountryDropdown);
+                        }}
+                        className="px-3 py-3 border border-r-0 rounded-l-lg border-gray-300 bg-white text-sm flex items-center gap-2 hover:bg-gray-50 focus:ring-2 focus:ring-orx-blue focus:border-orx-blue transition-colors min-w-[120px]"
+                      >
+                        <span>{getSelectedCountry().flag}</span>
+                        <span>{getSelectedCountry().code}</span>
+                        <ChevronDown className={`w-3 h-3 text-gray-400 transition-transform ${showCountryDropdown ? 'rotate-180' : ''}`} />
+                      </button>
+
+                      {showCountryDropdown && (
+                        <div className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 min-w-[200px] max-h-60 overflow-y-auto">
+                          {countries.map((country) => (
+                            <button
+                              key={country.code}
+                              type="button"
+                              onClick={() => {
+                                handleInputChange('countryCode', country.code);
+                                setShowCountryDropdown(false);
+                              }}
+                              className="w-full px-3 py-2 text-left hover:bg-orx-bg1 transition-colors flex items-center gap-2 text-sm first:rounded-t-lg last:rounded-b-lg"
+                            >
+                              <span>{country.flag}</span>
+                              <span>{country.code}</span>
+                              <span className="text-gray-600">{country.name}</span>
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
                     <input
                       type="tel"
                       placeholder="123 456 789"
                       value={formData.phone}
                       onChange={(e) => handleInputChange('phone', e.target.value)}
-                      className={`flex-1 px-4 py-3 border border-l-0 rounded-r-lg focus:ring-2 focus:ring-orx-blue focus:border-orx-blue ${
+                      className={`flex-1 px-4 py-3 border border-l-0 rounded-r-lg focus:ring-2 focus:ring-orx-blue focus:border-orx-blue transition-colors ${
                         errors.phone ? 'border-red-500' : 'border-gray-300'
                       }`}
                     />

@@ -21,7 +21,7 @@ export default function Header() {
       }`}>
         <div className="flex items-center gap-8">
           <div className="relative">
-            <button 
+            <button
               className="flex items-center gap-2 px-3 py-2 rounded-full bg-white/20"
               onClick={() => setShowLanguageMenu(!showLanguageMenu)}
             >
@@ -30,21 +30,24 @@ export default function Header() {
               </span>
               <ChevronDown className="w-4 h-4 text-white" />
             </button>
-            
+
             {showLanguageMenu && (
-              <div className="absolute top-full mt-2 bg-white rounded-lg shadow-lg py-2 min-w-[120px]">
-                <button
-                  className="w-full px-4 py-2 text-left hover:bg-gray-100 text-sm"
-                  onClick={() => changeLanguage('es')}
-                >
-                  Español
-                </button>
-                <button
-                  className="w-full px-4 py-2 text-left hover:bg-gray-100 text-sm"
-                  onClick={() => changeLanguage('en')}
-                >
-                  English
-                </button>
+              <div className="absolute top-full mt-2 bg-white rounded-lg shadow-lg py-2 min-w-[120px] z-[100]">
+                {i18n.language === 'es' ? (
+                  <button
+                    className="w-full px-4 py-2 text-left hover:bg-gray-100 text-sm"
+                    onClick={() => changeLanguage('en')}
+                  >
+                    English
+                  </button>
+                ) : (
+                  <button
+                    className="w-full px-4 py-2 text-left hover:bg-gray-100 text-sm"
+                    onClick={() => changeLanguage('es')}
+                  >
+                    Español
+                  </button>
+                )}
               </div>
             )}
           </div>

@@ -460,11 +460,27 @@ export default function BenefitsSection() {
           <div className="flex items-center justify-center gap-4 mt-8">
             <div className="flex-1 h-px bg-gradient-to-r from-white to-gray-300"></div>
             <div className="flex gap-4">
-              <button className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-                <ChevronLeft className="w-4 h-4 text-gray-500" />
+              <button
+                onClick={goToPreviousTab}
+                disabled={currentIndex === 0}
+                className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${
+                  currentIndex === 0
+                    ? 'bg-gray-100 cursor-not-allowed'
+                    : 'bg-orx-blue hover:bg-orx-blue/90 cursor-pointer'
+                }`}
+              >
+                <ChevronLeft className={`w-4 h-4 ${currentIndex === 0 ? 'text-gray-400' : 'text-white'}`} />
               </button>
-              <button className="w-10 h-10 rounded-full border border-gray-300 bg-white flex items-center justify-center">
-                <ChevronRight className="w-4 h-4 text-orx-primary" />
+              <button
+                onClick={goToNextTab}
+                disabled={currentIndex === tabs.length - 1}
+                className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${
+                  currentIndex === tabs.length - 1
+                    ? 'bg-gray-100 border border-gray-200 cursor-not-allowed'
+                    : 'bg-white border border-orx-blue hover:bg-orx-blue/5 cursor-pointer'
+                }`}
+              >
+                <ChevronRight className={`w-4 h-4 ${currentIndex === tabs.length - 1 ? 'text-gray-400' : 'text-orx-blue'}`} />
               </button>
             </div>
             <div className="flex-1 h-px bg-gradient-to-l from-white to-gray-300"></div>

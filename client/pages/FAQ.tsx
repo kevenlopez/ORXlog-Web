@@ -142,15 +142,15 @@ const FAQ: React.FC = () => {
     <div className="min-h-screen bg-orx-bg1">
       <Header />
       
-      <main className="pt-20">
+      <main className="pt-32">
         <div className="max-w-4xl mx-auto px-6 py-16">
-          
+
           {/* Header Section */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-orx-primary mb-4">
               Preguntas más frecuentes
             </h1>
-            <p className="text-lg text-orx-primary mb-12">
+            <p className="text-lg text-orx-primary mb-6">
               Selecciona tu perfil
             </p>
             

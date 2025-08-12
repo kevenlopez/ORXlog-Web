@@ -76,6 +76,12 @@ export default function Partner() {
     return phoneRegex.test(phone) && phone.length >= 7;
   };
 
+  const handlePhoneInput = (value: string) => {
+    // Only allow numbers, spaces, dashes, parentheses, and plus sign
+    const cleanedValue = value.replace(/[^\d\s\-\(\)\+]/g, '');
+    handleInputChange('phone', cleanedValue);
+  };
+
   const validateWebsite = (website: string) => {
     // More comprehensive URL validation
     const websiteRegex = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/i;

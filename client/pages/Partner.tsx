@@ -40,7 +40,7 @@ export default function Partner() {
     { code: '+56', flag: '🇨🇱', name: 'Chile' },
     { code: '+54', flag: '🇦🇷', name: 'Argentina' },
     { code: '+55', flag: '🇧🇷', name: 'Brasil' },
-    { code: '+58', flag: '🇻🇪', name: 'Venezuela' }
+    { code: '+58', flag: '🇻���', name: 'Venezuela' }
   ];
 
   const countryList = [
@@ -398,7 +398,8 @@ export default function Partner() {
                       type="tel"
                       placeholder="123 456 789"
                       value={formData.phone}
-                      onChange={(e) => handleInputChange('phone', e.target.value)}
+                      onChange={(e) => handlePhoneInput(e.target.value)}
+                      inputMode="numeric"
                       className={`flex-1 px-4 py-3 border border-l-0 rounded-r-lg focus:ring-2 focus:ring-orx-blue focus:border-orx-blue transition-colors ${
                         errors.phone ? 'border-red-500' : 'border-gray-300'
                       }`}

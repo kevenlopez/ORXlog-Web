@@ -22,14 +22,14 @@ const Architecture: React.FC = () => {
       <Header />
       
       <main className="pt-32">
-        <div className="max-w-6xl mx-auto px-6 py-16">
-          
+        <div className="max-w-6xl mx-auto px-6 py-16 flex flex-col">
+
           {/* Hero Section */}
-          <div className="text-center mb-20">
-            <h1 className="text-4xl md:text-6xl font-bold text-orx-primary mb-6 leading-tight">
+          <div className="text-center mx-auto mb-20">
+            <h1 className="text-4xl md:text-6xl font-bold text-orx-primary mb-6 leading-tight w-[720px]">
               Una plataforma modular, escalable y agnóstica
             </h1>
-            <p className="text-xl text-orx-primary mb-8 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-orx-primary mb-8 mx-auto leading-relaxed w-[720px]">
               Orxlog opera como una capa de inteligencia estratégica entre tus fuentes de datos y las plataformas de análisis o respuesta. Se despliega de forma on-premise, cloud o híbrida, adaptándose completamente a tu infraestructura actual.
             </p>
             <button

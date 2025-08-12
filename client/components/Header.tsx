@@ -1,10 +1,12 @@
 import { ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useScrollDirection } from '../hooks/useScrollDirection';
 
 export default function Header() {
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
   const { scrollDirection, isScrolled } = useScrollDirection();
   const [showLanguageMenu, setShowLanguageMenu] = useState(false);
 
@@ -80,7 +82,10 @@ export default function Header() {
           <a href="#" className="text-white text-sm">{t('header.faq')}</a>
         </nav>
 
-        <button className="bg-white text-orx-primary px-5 py-3 rounded-full text-sm font-medium whitespace-nowrap">
+        <button
+          onClick={() => navigate('/contacto')}
+          className="bg-white text-orx-primary px-5 py-3 rounded-full text-sm font-medium whitespace-nowrap hover:bg-gray-50 transition-colors"
+        >
           {t('header.demo')}
         </button>
       </div>

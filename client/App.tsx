@@ -5,6 +5,7 @@ import Index from "@/pages/Index";
 import Contact from "@/pages/Contact";
 import Partner from "@/pages/Partner";
 import FAQ from "@/pages/FAQ";
+import Solution from "@/pages/Solution";
 import NotFound from "@/pages/NotFound";
 import './lib/i18n';
 

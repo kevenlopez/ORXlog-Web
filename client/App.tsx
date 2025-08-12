@@ -28,6 +28,7 @@ function App() {
           <Route path="/partner" element={<Partner />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/solucion" element={<Solution />} />
+          <Route path="/arquitectura" element={<Architecture />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Toaster />

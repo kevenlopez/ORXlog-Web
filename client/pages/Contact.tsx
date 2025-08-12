@@ -35,7 +35,7 @@ export default function Contact() {
     { code: '+93', flag: '🇦🇫', name: 'Afganistán' },
     { code: '+355', flag: '🇦🇱', name: 'Albania' },
     { code: '+49', flag: '🇩🇪', name: 'Alemania' },
-    { code: '+376', flag: '���🇩', name: 'Andorra' },
+    { code: '+376', flag: '🇦🇩', name: 'Andorra' },
     { code: '+244', flag: '🇦🇴', name: 'Angola' },
     { code: '+966', flag: '🇸🇦', name: 'Arabia Saudí' },
     { code: '+213', flag: '🇩🇿', name: 'Argelia' },
@@ -66,7 +66,7 @@ export default function Contact() {
     { code: '+506', flag: '🇨🇷', name: 'Costa Rica' },
     { code: '+385', flag: '🇭🇷', name: 'Croacia' },
     { code: '+53', flag: '🇨🇺', name: 'Cuba' },
-    { code: '+45', flag: '🇩🇰', name: 'Dinamarca' },
+    { code: '+45', flag: '��🇰', name: 'Dinamarca' },
     { code: '+1', flag: '🇩🇴', name: 'República Dominicana' },
     { code: '+593', flag: '🇪🇨', name: 'Ecuador' },
     { code: '+20', flag: '🇪🇬', name: 'Egipto' },
@@ -421,7 +421,7 @@ export default function Contact() {
                       </button>
 
                       {showCountryDropdown && (
-                        <div className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 min-w-[200px] max-h-60 overflow-y-auto">
+                        <div className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 w-[280px] max-h-60 overflow-y-auto">
                           {countries.map((country) => (
                             <button
                               key={country.code}
@@ -433,8 +433,8 @@ export default function Contact() {
                               className="w-full px-3 py-2 text-left hover:bg-orx-bg1 transition-colors flex items-center gap-2 text-sm first:rounded-t-lg last:rounded-b-lg"
                             >
                               <span>{country.flag}</span>
-                              <span>{country.code}</span>
-                              <span className="text-gray-600">{country.name}</span>
+                              <span className="font-medium">{country.code}</span>
+                              <span className="text-gray-600 truncate">{country.name}</span>
                             </button>
                           ))}
                         </div>
@@ -445,7 +445,8 @@ export default function Contact() {
                       type="tel"
                       placeholder="123 456 789"
                       value={formData.phone}
-                      onChange={(e) => handleInputChange('phone', e.target.value)}
+                      onChange={(e) => handlePhoneInput(e.target.value)}
+                      inputMode="numeric"
                       className={`flex-1 px-4 py-3 border border-l-0 rounded-r-lg focus:ring-2 focus:ring-orx-blue focus:border-orx-blue transition-colors ${
                         errors.phone ? 'border-red-500' : 'border-gray-300'
                       }`}

@@ -34,7 +34,7 @@ export default function Header() {
             </button>
 
             {showLanguageMenu && (
-              <div className="absolute top-full mt-2 bg-white rounded-lg shadow-lg py-2 min-w-[120px] z-[100]">
+              <div className="absolute top-full mt-2 bg-white rounded-lg shadow-lg py-2 min-w-[120px] z-[200]">
                 {i18n.language === 'es' ? (
                   <button
                     className="w-full px-4 py-2 text-left hover:bg-gray-100 text-sm"
@@ -63,7 +63,11 @@ export default function Header() {
         isScrolled ? 'top-4 fixed shadow-lg' : 'top-[88px]'
       }`}>
         <div className="flex items-center">
-          <svg width="128" height="36" viewBox="0 0 128 36" fill="none">
+          <button
+            onClick={() => navigate('/')}
+            className="focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-orx-primary rounded-lg"
+          >
+            <svg width="128" height="36" viewBox="0 0 128 36" fill="none">
             <circle cx="17.9831" cy="18.2165" r="6.53923" fill="#1EA9EA"/>
             <circle cx="101.387" cy="20.3184" r="2.80253" fill="#1EA9EA"/>
             <path d="M0.418195 21.5796C-0.467944 17.5699 0.063625 13.377 1.92233 9.71537C3.78103 6.05371 6.85187 3.1498 10.6116 1.49844C14.3713 -0.152912 18.5873 -0.449545 22.5413 0.659089C26.4952 1.76772 29.9424 4.21303 32.2955 7.57836C34.6486 10.9437 35.762 15.0208 35.4461 19.115C35.1301 23.2093 33.4043 27.0673 30.5627 30.0317C27.7211 32.9962 23.9396 34.8836 19.8624 35.3725C15.7852 35.8613 11.6646 34.9213 8.20273 32.7127L12.0214 26.7274C14.0985 28.0525 16.5708 28.6165 19.0172 28.3232C21.4635 28.0299 23.7324 26.8974 25.4374 25.1188C27.1423 23.3401 28.1778 21.0253 28.3674 18.5688C28.557 16.1122 27.8889 13.6659 26.477 11.6468C25.0652 9.62756 22.9968 8.16037 20.6245 7.49519C18.2521 6.83001 15.7225 7.00799 13.4667 7.99881C11.2109 8.98962 9.36836 10.732 8.25314 12.929C7.13791 15.126 6.81897 17.6417 7.35066 20.0475L0.418195 21.5796Z" fill="white"/>
@@ -73,13 +77,19 @@ export default function Header() {
             <path d="M41.3345 28.9593V5.39502H51.5041C53.5902 5.39502 55.2027 5.68771 56.3415 6.27309C57.4803 6.85847 58.2679 7.678 58.7043 8.73169C59.1513 9.78537 59.3748 11.02 59.3748 12.4356C59.3748 13.4041 59.2844 14.3141 59.1034 15.1656C58.9331 16.0064 58.5979 16.7514 58.0976 17.4006C57.5974 18.0499 56.8683 18.5714 55.9105 18.9652L60.4605 28.9593H55.5433L51.4083 19.6517H46.0761V28.9593H41.3345ZM46.0761 16.2671H51.9033C52.7121 16.2671 53.3241 16.1075 53.7392 15.7882C54.165 15.4582 54.4523 15.0219 54.6013 14.4791C54.761 13.9256 54.8408 13.3136 54.8408 12.6431C54.8408 12.0045 54.7716 11.3872 54.6333 10.7912C54.5055 10.1951 54.2448 9.71087 53.851 9.33836C53.4678 8.9552 52.8824 8.76362 52.0948 8.76362H46.0761V16.2671Z" fill="white"/>
             <path d="M110.261 20.3183C110.261 25.2196 106.288 29.193 101.386 29.193C96.485 29.193 92.5117 25.2196 92.5117 20.3183C92.5117 15.4169 96.485 11.4436 101.386 11.4436C106.288 11.4436 110.261 15.4169 110.261 20.3183ZM96.2391 20.3183C96.2391 23.1611 98.5436 25.4656 101.386 25.4656C104.229 25.4656 106.534 23.1611 106.534 20.3183C106.534 17.4755 104.229 15.171 101.386 15.171C98.5436 15.171 96.2391 17.4755 96.2391 20.3183Z" fill="white"/>
           </svg>
+          </button>
         </div>
 
         <nav className="hidden lg:flex items-center gap-8">
-          <a href="#" className="text-white text-sm">{t('header.home')}</a>
-          <a href="#" className="text-white text-sm">{t('header.solution')}</a>
-          <a href="#" className="text-white text-sm">{t('header.architecture')}</a>
-          <a href="#" className="text-white text-sm">{t('header.faq')}</a>
+          <button
+            onClick={() => navigate('/')}
+            className="text-white text-sm hover:text-orx-sky transition-colors"
+          >
+            {t('header.home')}
+          </button>
+          <a href="#" className="text-white text-sm hover:text-orx-sky transition-colors">{t('header.solution')}</a>
+          <a href="#" className="text-white text-sm hover:text-orx-sky transition-colors">{t('header.architecture')}</a>
+          <a href="#" className="text-white text-sm hover:text-orx-sky transition-colors">{t('header.faq')}</a>
         </nav>
 
         <button

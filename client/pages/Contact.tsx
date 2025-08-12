@@ -16,14 +16,32 @@ export default function Contact() {
     industry: '',
     email: '',
     phone: '',
-    countryCode: '+51',
+    countryCode: '+593',
     dataVolume: '',
     dataSources: '',
     message: '',
     acceptTerms: false
   });
 
+  const [showCountryDropdown, setShowCountryDropdown] = useState(false);
+  const [showIndustryDropdown, setShowIndustryDropdown] = useState(false);
+  const [showVolumeDropdown, setShowVolumeDropdown] = useState(false);
+  const [showSourcesDropdown, setShowSourcesDropdown] = useState(false);
+
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const countries = [
+    { code: '+593', flag: '🇪🇨', name: 'Ecuador' },
+    { code: '+1', flag: '🇺🇸', name: 'Estados Unidos' },
+    { code: '+34', flag: '🇪🇸', name: 'España' },
+    { code: '+52', flag: '🇲🇽', name: 'México' },
+    { code: '+57', flag: '🇨🇴', name: 'Colombia' },
+    { code: '+51', flag: '🇵🇪', name: 'Perú' },
+    { code: '+56', flag: '🇨🇱', name: 'Chile' },
+    { code: '+54', flag: '🇦🇷', name: 'Argentina' },
+    { code: '+55', flag: '🇧🇷', name: 'Brasil' },
+    { code: '+58', flag: '🇻🇪', name: 'Venezuela' }
+  ];
 
   const industries = [
     'Servicios Financieros',
@@ -105,6 +123,17 @@ export default function Contact() {
     if (errors[field]) {
       setErrors(prev => ({ ...prev, [field]: '' }));
     }
+  };
+
+  const getSelectedCountry = () => {
+    return countries.find(country => country.code === formData.countryCode) || countries[0];
+  };
+
+  const closeAllDropdowns = () => {
+    setShowCountryDropdown(false);
+    setShowIndustryDropdown(false);
+    setShowVolumeDropdown(false);
+    setShowSourcesDropdown(false);
   };
 
   return (
@@ -238,7 +267,7 @@ export default function Contact() {
                       className="px-3 py-3 border border-r-0 rounded-l-lg border-gray-300 bg-gray-50 text-sm"
                     >
                       <option value="+51">🇵🇪 +51</option>
-                      <option value="+1">🇺🇸 +1</option>
+                      <option value="+1">����🇸 +1</option>
                       <option value="+34">🇪🇸 +34</option>
                       <option value="+52">🇲🇽 +52</option>
                       <option value="+57">🇨🇴 +57</option>

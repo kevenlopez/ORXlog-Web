@@ -374,7 +374,7 @@ export default function Partner() {
                   <label className="block text-orx-primary text-sm font-medium mb-2">
                     Número celular
                   </label>
-                  <div className="flex max-w-[280px]">
+                  <div className="flex max-w-[245px]">
                     <div className="relative">
                       <button
                         type="button"
@@ -416,7 +416,7 @@ export default function Partner() {
                       value={formData.phone}
                       onChange={(e) => handlePhoneInput(e.target.value)}
                       inputMode="numeric"
-                      className={`w-[200px] px-3 py-3 border border-l-0 rounded-r-lg focus:ring-2 focus:ring-orx-blue focus:border-orx-blue transition-colors ${
+                      className={`w-[165px] px-3 py-3 border border-l-0 rounded-r-lg focus:ring-2 focus:ring-orx-blue focus:border-orx-blue transition-colors ${
                         errors.phone ? 'border-red-500' : 'border-gray-300'
                       }`}
                     />

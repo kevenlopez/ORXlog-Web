@@ -77,8 +77,18 @@ export default function Partner() {
   };
 
   const validateWebsite = (website: string) => {
-    const websiteRegex = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
-    return websiteRegex.test(website);
+    // More comprehensive URL validation
+    const websiteRegex = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/i;
+    const trimmedWebsite = website.trim().toLowerCase();
+
+    // Check if it's a valid URL format
+    if (!websiteRegex.test(trimmedWebsite)) {
+      return false;
+    }
+
+    // Ensure it has a proper domain extension
+    const domainParts = trimmedWebsite.split('.');
+    return domainParts.length >= 2 && domainParts[domainParts.length - 1].length >= 2;
   };
 
   const handleSubmit = (e: React.FormEvent) => {

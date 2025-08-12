@@ -32,7 +32,7 @@ export default function Contact() {
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const countries = [
-    { code: '+93', flag: '🇦🇫', name: 'Afganistán' },
+    { code: '+93', flag: '����🇫', name: 'Afganistán' },
     { code: '+355', flag: '🇦🇱', name: 'Albania' },
     { code: '+49', flag: '🇩🇪', name: 'Alemania' },
     { code: '+376', flag: '🇦🇩', name: 'Andorra' },
@@ -66,7 +66,7 @@ export default function Contact() {
     { code: '+506', flag: '🇨🇷', name: 'Costa Rica' },
     { code: '+385', flag: '🇭🇷', name: 'Croacia' },
     { code: '+53', flag: '🇨🇺', name: 'Cuba' },
-    { code: '+45', flag: '��🇰', name: 'Dinamarca' },
+    { code: '+45', flag: '🇩🇰', name: 'Dinamarca' },
     { code: '+1', flag: '🇩🇴', name: 'República Dominicana' },
     { code: '+593', flag: '🇪🇨', name: 'Ecuador' },
     { code: '+20', flag: '🇪🇬', name: 'Egipto' },
@@ -413,7 +413,7 @@ export default function Contact() {
                           closeAllDropdowns();
                           setShowCountryDropdown(!showCountryDropdown);
                         }}
-                        className="px-2 py-3 border border-r-0 rounded-l-lg border-gray-300 bg-white text-sm flex items-center gap-1 hover:bg-gray-50 focus:ring-2 focus:ring-orx-blue focus:border-orx-blue transition-colors w-[100px] flex-shrink-0"
+                        className="px-1 py-3 border border-r-0 rounded-l-lg border-gray-300 bg-white text-xs flex items-center gap-1 hover:bg-gray-50 focus:ring-2 focus:ring-orx-blue focus:border-orx-blue transition-colors w-[80px] flex-shrink-0"
                       >
                         <span>{getSelectedCountry().flag}</span>
                         <span>{getSelectedCountry().code}</span>

@@ -93,11 +93,11 @@ const resources = {
       // Footer
       "footer.description": "La inteligencia de logs que impulsa la seguridad del futuro.",
       "footer.contact": "Contacto",
-      "footer.email": "contacto@orxlog.com",
-      "footer.location": "Barcelona, España",
+      "footer.email": "info@orxlog.com",
+      "footer.location": "Miami, USA",
       "footer.legal": "Términos legales",
       "footer.privacy": "Política de privacidad",
-      "footer.rights": "© 2024 ORXlog. Todos los derechos reservados."
+      "footer.rights": "© 2025 ORXlog. Todos los derechos reservados."
     }
   },
   en: {
@@ -190,11 +190,11 @@ const resources = {
       // Footer
       "footer.description": "The log intelligence that powers the security of the future.",
       "footer.contact": "Contact",
-      "footer.email": "contact@orxlog.com", 
-      "footer.location": "Barcelona, Spain",
+      "footer.email": "info@orxlog.com",
+      "footer.location": "Miami, USA",
       "footer.legal": "Legal terms",
       "footer.privacy": "Privacy policy",
-      "footer.rights": "© 2024 ORXlog. All rights reserved."
+      "footer.rights": "© 2025 ORXlog. All rights reserved."
     }
   }
 };

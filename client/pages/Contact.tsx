@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { Mail, ChevronDown } from 'lucide-react';
@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 export default function Contact() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const formRef = useRef<HTMLDivElement>(null);
   
   const [formData, setFormData] = useState({
     firstName: '',
@@ -136,6 +137,20 @@ export default function Contact() {
     setShowSourcesDropdown(false);
   };
 
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (formRef.current && !formRef.current.contains(event.target as Node)) {
+        closeAllDropdowns();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-100">
       <Header />
@@ -161,7 +176,7 @@ export default function Contact() {
           </div>
 
           {/* Form */}
-          <div className="w-full lg:w-[580px] bg-white rounded-3xl p-8 border border-gray-200">
+          <div ref={formRef} className="w-full lg:w-[580px] bg-white rounded-3xl p-8 border border-gray-200 shadow-xl">
             <h2 className="text-2xl font-medium text-orx-primary mb-6">Agenda una demo</h2>
             
             <form onSubmit={handleSubmit} className="space-y-6">

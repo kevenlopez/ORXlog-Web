@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import Index from "@/pages/Index";
+import Contact from "@/pages/Contact";
 import NotFound from "@/pages/NotFound";
 import './lib/i18n';
 
@@ -19,6 +20,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/contacto" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Toaster />

@@ -1,7 +1,9 @@
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 export default function DataFlowSection() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <section className="px-6 mb-20">
@@ -52,7 +54,10 @@ export default function DataFlowSection() {
           </div>
         </div>
         
-        <button className="bg-orx-blue text-white px-6 py-3 rounded-full font-medium hover:bg-orx-blue/90 transition-colors">
+        <button
+          onClick={() => navigate('/contacto')}
+          className="bg-orx-blue text-white px-6 py-3 rounded-full font-medium hover:bg-orx-blue/90 transition-colors"
+        >
           {t('header.demo')}
         </button>
       </div>

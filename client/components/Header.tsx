@@ -54,7 +54,10 @@ export default function Header() {
             )}
           </div>
           <button
-            onClick={() => navigate('/partner')}
+            onClick={() => {
+              navigate('/partner');
+              window.scrollTo(0, 0);
+            }}
             className="text-white text-sm hover:text-orx-sky transition-colors"
           >
             {t('header.partner')}

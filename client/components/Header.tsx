@@ -123,7 +123,10 @@ export default function Header() {
         </nav>
 
         <button
-          onClick={() => navigate('/contacto')}
+          onClick={() => {
+            navigate('/contacto');
+            window.scrollTo(0, 0);
+          }}
           className="bg-white text-orx-primary px-5 py-3 rounded-full text-sm font-medium whitespace-nowrap hover:bg-gray-50 transition-colors"
         >
           {t('header.demo')}

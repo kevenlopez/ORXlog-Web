@@ -24,6 +24,7 @@ function App() {
           <Route path="/" element={<Index />} />
           <Route path="/contacto" element={<Contact />} />
           <Route path="/partner" element={<Partner />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Toaster />

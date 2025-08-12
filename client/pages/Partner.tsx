@@ -374,7 +374,7 @@ export default function Partner() {
                   <label className="block text-orx-primary text-sm font-medium mb-2">
                     Número celular
                   </label>
-                  <div className="flex">
+                  <div className="flex max-w-[280px]">
                     <div className="relative">
                       <button
                         type="button"
@@ -388,7 +388,7 @@ export default function Partner() {
                         <span>{getSelectedCountry().code}</span>
                         <ChevronDown className={`w-3 h-3 text-gray-400 transition-transform ${showCountryCodeDropdown ? 'rotate-180' : ''}`} />
                       </button>
-                      
+
                       {showCountryCodeDropdown && (
                         <div className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 w-[280px] max-h-60 overflow-y-auto">
                           {countries.map((country, index) => (
@@ -409,14 +409,14 @@ export default function Partner() {
                         </div>
                       )}
                     </div>
-                    
+
                     <input
                       type="tel"
                       placeholder="123 456 789"
                       value={formData.phone}
                       onChange={(e) => handlePhoneInput(e.target.value)}
                       inputMode="numeric"
-                      className={`flex-1 px-4 py-3 border border-l-0 rounded-r-lg focus:ring-2 focus:ring-orx-blue focus:border-orx-blue transition-colors ${
+                      className={`w-[200px] px-3 py-3 border border-l-0 rounded-r-lg focus:ring-2 focus:ring-orx-blue focus:border-orx-blue transition-colors ${
                         errors.phone ? 'border-red-500' : 'border-gray-300'
                       }`}
                     />

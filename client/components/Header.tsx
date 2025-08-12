@@ -69,7 +69,10 @@ export default function Header() {
       }`}>
         <div className="flex items-center">
           <button
-            onClick={() => navigate('/')}
+            onClick={() => {
+              navigate('/');
+              window.scrollTo(0, 0);
+            }}
             className="focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-orx-primary rounded-lg"
           >
             <svg width="128" height="36" viewBox="0 0 128 36" fill="none">

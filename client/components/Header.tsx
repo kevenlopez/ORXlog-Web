@@ -90,20 +90,29 @@ export default function Header() {
 
         <nav className="hidden lg:flex items-center gap-8">
           <button
-            onClick={() => navigate('/')}
+            onClick={() => {
+              navigate('/');
+              window.scrollTo(0, 0);
+            }}
             className="text-white text-sm hover:text-orx-sky transition-colors"
           >
             {t('header.home')}
           </button>
           <button
-            onClick={() => navigate('/solucion')}
+            onClick={() => {
+              navigate('/solucion');
+              window.scrollTo(0, 0);
+            }}
             className="text-white text-sm hover:text-orx-sky transition-colors"
           >
             {t('header.solution')}
           </button>
           <a href="#" className="text-white text-sm hover:text-orx-sky transition-colors">{t('header.architecture')}</a>
           <button
-            onClick={() => navigate('/faq')}
+            onClick={() => {
+              navigate('/faq');
+              window.scrollTo(0, 0);
+            }}
             className="text-white text-sm hover:text-orx-sky transition-colors"
           >
             {t('header.faq')}

@@ -391,9 +391,9 @@ export default function Partner() {
                       
                       {showCountryCodeDropdown && (
                         <div className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 w-[280px] max-h-60 overflow-y-auto">
-                          {countries.map((country) => (
+                          {countries.map((country, index) => (
                             <button
-                              key={country.code}
+                              key={`${country.code}-${country.name}-${index}`}
                               type="button"
                               onClick={() => {
                                 handleInputChange('countryCode', country.code);
